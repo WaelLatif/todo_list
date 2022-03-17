@@ -1,21 +1,22 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+
 
 import 'package:flutter/material.dart';
+import 'package:todo_list/components.dart';
 
 class NewTasksScreen extends StatelessWidget {
   const NewTasksScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'New Tasks',
-        style: TextStyle(
-          fontSize: 25.0,
-          fontWeight: FontWeight.bold,
-
+    return ListView.separated(
+        itemBuilder: (context, index) => buildTaskItem(),
+        separatorBuilder: (context, index)=>Container(
+          width: double.infinity,
+          height: 1.0,
+          color: Colors.grey[300],
         ),
-      ),
-    );
+        itemCount: 10);
   }
 }
