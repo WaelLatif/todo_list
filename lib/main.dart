@@ -1,10 +1,21 @@
 // ignore_for_file: use_key_in_widget_constructors
 
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
+import 'components/constanse.dart';
 import 'layout/home_layout.dart';
 
 void main() {
+
+
+  BlocOverrides.runZoned(
+        () {
+      // Use cubits...
+    },
+    blocObserver: MyBlocObserver(),
+  );
+
   runApp(MyApp());
 }
 
